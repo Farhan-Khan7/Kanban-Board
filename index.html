@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div class="hero"></div>
+        <nav>
+            <div class="nav-left"><img src="image.png" alt="">Workflow</div>
+            <div class="nav-right"><button>Add New Task</button></div>
+        </nav>
+
+
+        <section class="board">
+            <div id="todo" class="task-column">
+                <div  class="heading">
+                    <div class="left">ToDo</div>
+                    <div class="right">Count</div>
+                </div>
+                <div draggable="true" class="task">
+                    <h2>Task 1</h2>
+                    <p>Description for task 1</p>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div id="progress" class="task-column">
+                <div class="heading">
+                    <div class="left">InProgress</div>
+                    <div class="right">Count</div>
+                </div>
+            </div>
+            <div id="done" class="task-column">
+                <div class="heading">
+                    <div class="left">Done</div>
+                    <div class="right">Count</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

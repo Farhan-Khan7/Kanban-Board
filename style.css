@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html
+,body{
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    /* for background color variable */
+    --bg-color: #000000;
+
+    /* for button color variable */
+    --bg-primary-button-color : #9BE784;
+    --bg-secondry-button-color : #F73F86;
+
+
+    /* For text color variable */
+    --primary-text-color: #f4f4f4;
+    --secodry-text-color: #000000;
+
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --padding-sm: 5px;
+    --padding-md: 10px;
+    --padding-lg: 15px;
+    --padding-xl: 20px;
+    --padding-xxl: 30px;
+
+
+    /* border radius variables */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-xxl: 30px;
+
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav{
+    padding: var(--nav-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button{
+    background-color: var(--bg-secondry-button-color);
+    border: none;
+    outline: none;
+    color: var(--secodry-text-color);
+    cursor: pointer;
+    font-size: medium;
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: var(--border-radius-sm);
+}
+.nav-left{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.nav-left img{
+    height: 30px;
+}
+
+/* Grid background design */
+
+.hero {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* white background */
+    overflow: hidden;
+    z-index: -1;
+    /* base layer */
+}
+
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    /* scrolls with the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient( #9be7842a 1px, transparent 1px),
+        linear-gradient(90deg, #9be7842a 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1000;
+    /* behind content */
+    pointer-events: none;
+    /* clicks pass through */
+}
+
+
+/* task code */
+section{
+    height: 90vh;
+    /* background-color: #000000; */
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--padding-xxl);
+}
+
+section .task-column{
+    background-color: transparent;
+    flex-grow: 1;
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-md);
+    border: dashed #9BE784;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-lg);
+    transition: all ease .5s;
+}
+section .task-hover{
+    scale: 1.05;
+    border: dashed #F73F86;
+}
+section .task-column .heading{
+    font-size: large;
+    font-weight: 500;
+    padding: var(--padding-md);
+    border-bottom: dashed #9BE784;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .task-column .task{
+    cursor: grab;
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-md);
+    background-color: var(--bg-primary-button-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+}
+section .task-column .task button{
+    background-color: var(--bg-secondry-button-color);
+    align-self: flex-end;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: var(--border-radius-sm);
+    font-size: medium;
+
+}
