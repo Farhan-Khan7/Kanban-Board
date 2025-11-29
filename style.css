@@ -1,23 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html
-,body{
+html,
+body {
     width: 100%;
     height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-:root{
+:root {
     /* for background color variable */
     --bg-color: #000000;
 
     /* for button color variable */
-    --bg-primary-button-color : #9BE784;
-    --bg-secondry-button-color : #F73F86;
+    --bg-primary-button-color: #9BE784;
+    --bg-secondry-button-color: #F73F86;
 
 
     /* For text color variable */
@@ -41,25 +41,27 @@ html
     --border-radius-xxl: 30px;
 
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
 }
-main{
+
+main {
     /* height: 100%; */
     display: flex;
     flex-direction: column;
 }
 
 
-nav{
+nav {
     padding: var(--nav-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav button{
+nav button {
     background-color: var(--bg-secondry-button-color);
     border: none;
     outline: none;
@@ -69,14 +71,16 @@ nav button{
     padding: var(--padding-sm) var(--padding-lg);
     border-radius: var(--border-radius-sm);
 }
-.nav-left{
+
+.nav-left {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-size: 1.5rem;
     font-weight: 500;
 }
-.nav-left img{
+
+.nav-left img {
     height: 30px;
 }
 
@@ -107,7 +111,7 @@ nav button{
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient( #9be7842a 1px, transparent 1px),
+        linear-gradient(#9be7842a 1px, transparent 1px),
         linear-gradient(90deg, #9be7842a 1px, transparent 1px);
     background-size: 40px 40px;
     z-index: 1000;
@@ -118,7 +122,7 @@ nav button{
 
 
 /* task code */
-section{
+section {
     height: 90vh;
     /* background-color: #000000; */
     padding: var(--section-padding);
@@ -127,7 +131,7 @@ section{
     gap: var(--padding-xxl);
 }
 
-section .task-column{
+section .task-column {
     background-color: transparent;
     flex-grow: 1;
     padding: var(--padding-md);
@@ -138,11 +142,13 @@ section .task-column{
     gap: var(--padding-lg);
     transition: all ease .5s;
 }
-section .task-hover{
+
+section .task-hover {
     scale: 1.05;
     border: dashed #F73F86;
 }
-section .task-column .heading{
+
+section .task-column .heading {
     font-size: large;
     font-weight: 500;
     padding: var(--padding-md);
@@ -152,7 +158,8 @@ section .task-column .heading{
     justify-content: space-between;
     align-items: center;
 }
-section .task-column .task{
+
+section .task-column .task {
     cursor: grab;
     border-radius: var(--border-radius-md);
     padding: var(--padding-md);
@@ -161,7 +168,8 @@ section .task-column .task{
     flex-direction: column;
     gap: var(--padding-sm);
 }
-section .task-column .task button{
+
+section .task-column .task button {
     background-color: var(--bg-secondry-button-color);
     align-self: flex-end;
     cursor: pointer;
@@ -171,4 +179,62 @@ section .task-column .task button{
     border-radius: var(--border-radius-sm);
     font-size: medium;
 
+}
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.active{
+    display: flex;
+}
+
+.modal .bg {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-primary-button-color .1);
+    backdrop-filter: blur(5px);
+    position: fixed;
+}
+
+.modal .center{
+    z-index: 1000;
+    background: var(--bg-primary-button-color);
+    padding: var(--padding-xxl);
+    border-radius: var(--border-radius-md);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal .center input , textarea{
+    border: none;
+    width: 30vh;
+    padding: var(--padding-lg);
+    margin: var(--section-padding);
+    outline: none;
+
+}
+input::placeholder{
+    font-size: medium;
+    font-weight: 600;
+}
+textarea::placeholder{
+    font-size: larger;
+    font-weight: 700;
+}
+.modal .center button{
+    background-color: var(--bg-secondry-button-color);
+    border-radius: var(--border-radius-md);
+    border: none;
+    font-size: large;
+    padding: var(--padding-md) var(--padding-xxl);
+    margin: var(--padding-md) var(--padding-lg);
 }
